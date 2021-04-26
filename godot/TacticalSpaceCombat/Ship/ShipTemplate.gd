@@ -207,8 +207,8 @@ func _take_damage(attack: int, object_position: Vector2) -> void:
 	emit_signal("hitpoints_changed", hitpoints, is_in_group("player"))
 
 
-func _get_neightbor_positions(at: Vector2) -> Array:
-	var out := []
+func _get_neightbor_positions(at: Vector2) -> PoolVector2Array:
+	var out := PoolVector2Array()
 	var point1 := tilemap.world_to_map(at)
 	for offset in Utils.DIRECTIONS:
 		var point2: Vector2 = point1 + offset
